@@ -1,7 +1,6 @@
-Feature: Sign Out then Sign In
-  As an existing user
-  I want to sing out of my account
-  then sign in with my existing credintials
+Feature:Sign In
+  After registering my new account
+  I want to sing out then sign in again with my new credentials
 
   Scenario: Signed In successfully
     Given I am a registered user

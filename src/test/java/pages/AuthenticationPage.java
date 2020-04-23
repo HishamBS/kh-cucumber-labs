@@ -28,6 +28,13 @@ public class AuthenticationPage extends Page {
         fill("passwd", user.getPassword());
         cssClick(PATH_SIGN_IN);
     }
+    public void enterWrongCredintials() {
+        fill("email", user.getEmail());
+        fill("passwd", "231123341231");
+        cssClick(PATH_SIGN_IN);
+    }
+
+    
 
 
 

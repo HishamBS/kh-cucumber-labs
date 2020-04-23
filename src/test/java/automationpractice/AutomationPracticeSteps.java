@@ -82,4 +82,5 @@ public class AutomationPracticeSteps {
     public void iAmAuthenticated() {
         myAccountPage.isCurrent();
     }
+
 }
