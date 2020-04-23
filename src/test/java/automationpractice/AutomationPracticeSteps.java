@@ -1,9 +1,6 @@
 package automationpractice;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.AuthenticationPage;
@@ -58,5 +55,31 @@ public class AutomationPracticeSteps {
     @Then("I will get an error")
     public void iWillGetAnError() {
         assertEquals(8, registrationPage.getErrorCount());
+    }
+
+
+    @Given("I am a registered user")
+    public void iAmARegisteredUser() {
+        iAmOnTheHomepage();
+        iSignIn();
+        enterAnEmailAddressToCreateAnAccount();
+        iFillInTheRegistrationForm();
+        iAmRegisteredAndLoggedIn();
+    }
+
+    @But("I am signed out")
+    public void iAmSignedOut() {
+        myAccountPage.signOut();
+    }
+
+    @When("I log in with my credentials")
+    public void iLogInWithMyCredentials() {
+        authenticationPage.isCurrent();
+        authenticationPage.enterCredintials();
+    }
+
+    @Then("I am authenticated")
+    public void iAmAuthenticated() {
+        myAccountPage.isCurrent();
     }
 }

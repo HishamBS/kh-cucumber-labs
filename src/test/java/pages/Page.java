@@ -13,7 +13,7 @@ import static java.util.logging.Logger.getLogger;
 
 public abstract class Page {
     static {
-        System.setProperty("webdriver.chrome.driver", "/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         System.setProperty("webdriver.chrome.silentOutput", "true");
         getLogger("org.openqa.selenium").setLevel(Level.SEVERE);
     }

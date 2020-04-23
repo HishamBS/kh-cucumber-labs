@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class AuthenticationPage extends Page {
     private User user;
+    public static final String PATH_SIGN_IN = "#SubmitLogin > span";
+
 
     public AuthenticationPage(WebDriver driver, User user) {
         super(driver, "Login - My Store");
@@ -19,5 +21,14 @@ public class AuthenticationPage extends Page {
     public void submit() {
         click("SubmitCreate");
     }
+
+
+    public void enterCredintials() {
+        fill("email", user.getEmail());
+        fill("passwd", user.getPassword());
+        cssClick(PATH_SIGN_IN);
+    }
+
+
 
 }
